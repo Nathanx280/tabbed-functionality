@@ -4,6 +4,10 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
+import DeepRemixer from "./pages/DeepRemixer";
+import AudioToVideo from "./pages/AudioToVideo";
+import RemixMerge from "./pages/RemixMerge";
+import StemReconstruct from "./pages/StemReconstruct";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -16,7 +20,10 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/deep-remixer" element={<DeepRemixer />} />
+          <Route path="/audio-to-video" element={<AudioToVideo />} />
+          <Route path="/remix-merge" element={<RemixMerge />} />
+          <Route path="/stem-reconstruct" element={<StemReconstruct />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
